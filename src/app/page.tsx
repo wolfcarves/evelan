@@ -1,3 +1,5 @@
+"use server";
+
 import Container from "@/components/Container/Container";
 import UserCardList from "./components/UserCardList";
 
