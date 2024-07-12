@@ -1,13 +1,14 @@
-"use server";
-
 import Container from "@/components/Container/Container";
-import UserCardList from "./components/UserCardList";
+import UserListsCard from "./components/UserListsCard";
+import UserListsTitle from "./components/UserListsTitle";
 
-export default function Home(props: any) {
+const Home = async () => {
   return (
     <Container className="text-center">
-      <UserCardList.Title title="User List" />
-      <UserCardList />
+      <UserListsTitle title="User List" />
+      <UserListsCard />
     </Container>
   );
-}
+};
+
+export default Home;

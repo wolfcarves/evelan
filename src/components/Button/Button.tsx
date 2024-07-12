@@ -1,22 +1,25 @@
-"use client";
-
 import React from "react";
 
-interface ButtonProps extends Omit<React.ComponentProps<"button">, "onClick"> {
+interface ButtonProps extends React.ComponentProps<"button"> {
   title?: string;
-  onClick?: any;
 }
 
 const Button: React.FC<ButtonProps> = ({
   title,
   children,
   className,
-  onClick,
+  disabled,
   ...props
 }) => {
+  const baseStyle = "text-sm text-white rounded-md px-5 py-3";
+  const stateStyle = !disabled
+    ? "bg-blue-500 hover:opacity-100 hover:shadow-md"
+    : "bg-blue-300";
+
   return (
     <button
-      className={`bg-blue-500 text-sm text-white rounded-md hover:opacity-80 hover:shadow-md px-5 py-3 ${className}`}
+      className={`${baseStyle} ${stateStyle} ${className}`}
+      disabled={disabled}
       {...props}
     >
       {title ?? children}

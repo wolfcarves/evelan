@@ -4,7 +4,7 @@ const nextConfig = {
         remotePatterns: [
             {
                 protocol: 'https',
-                hostname: 'i.redd.it',
+                hostname: 'reqres.in',
                 port: '',
                 pathname: '/**',
             },
