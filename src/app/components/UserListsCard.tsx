@@ -3,7 +3,7 @@
 import UserCard from "./UserCard";
 import useGetUserListQuery from "@/hooks/useGetUserListQuery";
 import { Button } from "@/components";
-import UserCardSkeleton from "./UserCardSkeleton";
+import UserListsSkeleton from "./UserListsSkeleton";
 
 const UserListsCard = () => {
   const { data, fetchNextPage, hasNextPage, isFetchingNextPage, isFetching } =
@@ -17,15 +17,7 @@ const UserListsCard = () => {
           <UserCard key={user.id} data={user} />
         ))}
 
-        {(isFetchingNextPage || isFetching) && (
-          <>
-            {Array.from({ length: 6 }).map((_, idx) => (
-              <>
-                <UserCardSkeleton key={idx} />
-              </>
-            ))}
-          </>
-        )}
+        {(isFetchingNextPage || isFetching) && <UserListsSkeleton />}
       </div>
 
       <div className="py-4">
